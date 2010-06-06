@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple sound player</title>
+    <script type="text/javascript" src="base64.js"></script>
+    <script type="text/javascript" src="wave.js"></script>
+    <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="sound-player.js"></script>
+    <style>
+      .sound {
+        margin: 10px;
+        padding: 10px;
+        color: #fff;
+        background-color: #000;
+      }
+    </style>
+    <script>
+      $(document).ready(function() {
+        $(".sound").each(function() {
+
+          $(this).click(function() {
+            var id     = $(this).attr("id");
+            var key    = id[0];
+            var octave = parseInt(id[1], 10);
+
+            playSound(key, octave, 0.2);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Simple sound player</h1>
+    <span id="c4" class="sound">ド</span>
+    <span id="d4" class="sound">レ</span>
+    <span id="e4" class="sound">ミ</span>
+    <span id="f4" class="sound">フ</span>
+    <span id="g4" class="sound">ソ</span>
+    <span id="a5" class="sound">ラ</span>
+    <span id="b5" class="sound">シ</span>
+    <span id="c5" class="sound">ド</span>
+  </body>
+</html>
