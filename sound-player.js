@@ -89,9 +89,9 @@ var pitchList = createPitchList();
 
 function playSound(key, octave, length) {
   var signals = createSignals(((60.0 / bpm) / (minlen / 4)) * length, pitchList[key.toUpperCase() + octave.toString(10)]);
-  var scheme  = convertToURL(convertToBinary(signals));
+  var schema  = convertToURL(convertToBinary(signals));
 
-  $("<audio>").attr({ src: scheme })
+  $("<audio>").attr({ src: schema })
   .bind("canplay", function() {
     this.play();
   })
